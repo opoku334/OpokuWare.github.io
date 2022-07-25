@@ -18,7 +18,15 @@
     font-size: 1em;
 }
 
-
+h1{
+    font-size: 70px;
+}
+.main p{
+    font-size: 40px;
+    border: 3px solid gray;
+    width: 100px;
+    text-align: center;
+}
 
 
 .logo{
@@ -104,14 +112,35 @@ article h2,h4{
 article h4{
     text-decoration: line-through;
 }
-
-
+.pics{
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:30px;
+    grid-auto-rows:300px;
+}
+.pics div{
+    overflow: hidden;
+}
+.pics .tall{
+    grid-row: span 2;
+}
+.pics .short{
+    grid-row: span 1;
+} 
 @media screen and (min-width: 481px) and (max-width:968px) {
     .logo{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 60px;
 
+    }
+    .pics{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .pics .tall{
+        grid-row: span 1;
     }
     .b{
         display: none;
@@ -188,6 +217,16 @@ article h4{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
 
+    }
+    .pics{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .pics .tall{
+        grid-row: span 1;
+    }
+    .pics .small{
+        grid-row: span 1
     }
     .a h1{
         display: inline;
@@ -269,6 +308,12 @@ article h4{
       .active {
         background-color: #04AA6D;
         color: white;
+      }
+      h1{
+        font-size: 30px;
+      }
+      .main p{
+        font-size: 20px;
       }
 
     
